@@ -32,7 +32,10 @@ namespace DotnetIteration
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            throw new System.NotImplementedException();
+            List<string> yellingWords = words.Select(x => x.ToUpper()).ToList();
+            //throw new System.NotImplementedException();
+            return yellingWords;
+
         }
 
 
@@ -43,7 +46,13 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+            List<int> timesTwo = numbers.Select(x => x * 2).ToList();
+            return timesTwo;
+
+            /*return numbers.Select(x => x * 2).ToList();
+            
+            */
         }
 
 
@@ -55,7 +64,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> StringyIndexes(List<string> words)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+            List<string> addingToString = words.Select((word, index) => $"{word} is at index {index}").ToList();
+            return addingToString;
         }
 
 
@@ -65,7 +76,11 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+
+            List<int> evens = numbers.Where(numbers => numbers % 2 == 0).ToList();
+
+            return evens;
         }
 
 
@@ -76,7 +91,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+            List<int> evenIndexes = numbers.Where((number, index) => index % 2 == 0).ToList();
+            return evenIndexes;
         }
 
 
@@ -95,7 +112,10 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> BestMovieOfTheYear(List<Movie> movies, int yearToMatch)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+            List<string> goodMovies = movies.Where(movie => movie.Score >= 90 && movie.Year == yearToMatch).Select(movie => $"{movie.Name}").ToList<string>();
+
+            return goodMovies;
         }
 
 
